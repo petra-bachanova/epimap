@@ -1,0 +1,13 @@
+﻿sample_id,fastq_1,fastq_2
+MTS009,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_004_S9_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_004_S9_R2_001.fastq.gz
+MTS037,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_005_S10_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_005_S10_R2_001.fastq.gz
+MTS063,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_006_S11_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_006_S11_R2_001.fastq.gz
+MTS036,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_007_S12_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_007_S12_R2_001.fastq.gz
+MTS065,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_008_S13_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_008_S13_R2_001.fastq.gz
+MTS035,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_009_S14_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_009_S14_R2_001.fastq.gz
+MTS005,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_010_S15_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_010_S15_R2_001.fastq.gz
+MTS003,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_011_S16_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_011_S16_R2_001.fastq.gz
+MTS041,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_012_S17_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_012_S17_R2_001.fastq.gz
+MTS013,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_013_S18_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_013_S18_R2_001.fastq.gz
+MTS058,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_014_S19_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_014_S19_R2_001.fastq.gz
+MTS008,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_015_S20_R1_001.fastq.gz,/dartfs-hpc/rc/lab/G/GSR_Active/Labs/Hong/260108_RNAseq/210273_015_S20_R2_001.fastq.gz
