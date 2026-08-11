@@ -1,9 +1,5 @@
 **/.DS_Store
 .DS_Store
-# Ignore BIDS rawdata and derivatives (stored elsewhere, or synced separately)
-rawdata/
-derivatives/
-stimuli/
 
 # Ignore system files
 .DS_Store
@@ -43,7 +39,8 @@ venv/
 *.tmp
 *.bak
 
-# Ignore MNE/EEGLAB/FieldTrip cache directories
-mne_data/
-mne_cache/
-scratch/
+# Ignore datafiles
+data/
+
+# RNA analysis
+.snakemake
