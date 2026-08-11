@@ -44,3 +44,5 @@ data/
 
 # RNA analysis
 .snakemake
+.Rproj.user
+*.Rproj

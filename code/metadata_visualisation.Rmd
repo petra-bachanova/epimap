@@ -1,0 +1,107 @@
+---
+title: "Metadata visualisation"
+output: html_document
+date: "2026-08-11"
+---
+
+```{r}
+library(table1)
+library(dplyr)
+library(reshape2)
+library(ggplot2)
+
+meta = read.csv(
+  "~/Documents/repos/epimap/data/clinical_metadata_260811.csv", row.names = 1)
+head(meta)
+```
+
+# Table1 split by on 1yr Engel outcome
+```{r}
+table1(
+  ~sex + 
+    age_at_surgery + 
+    epilepsy_duration_at_surgery + 
+    surgery_laterality + 
+    risk_factors_simple +
+    onset_pattern_simple +
+    onset_pattern_favourability
+    | outcome_1yr_simple, data=meta, overall=F)
+```
+
+# Table1 split by on most recent Engel outcome
+```{r}
+table1(
+  ~sex + 
+    age_at_surgery + 
+    epilepsy_duration_at_surgery + 
+    surgery_laterality + 
+    risk_factors_simple +
+    onset_pattern_simple +
+    onset_pattern_favourability
+    | outcome_most_recent_simple, data=meta, overall=F)
+```
+
+
+```{r}
+meta_counts <- meta %>%
+  group_by(onset_pattern_simple, outcome_1yr) %>%
+  summarise(n = n(), .groups = "drop")
+
+meta_counts$outcome_1yr <- factor(meta_counts$outcome_1yr, levels=c("IA","IB","IIA","IIB","IVA","IVB"))
+
+p <- ggplot(meta_counts, aes(x = onset_pattern_simple, y = n, fill = outcome_1yr)) +
+  geom_bar(stat = "identity") +
+  # geom_text(aes(label = n), 
+  #           position = position_stack(vjust = 0.5), 
+  #           color = "white", size = 4) +
+  scale_fill_manual(values = c("IA" = "#3A9AB2",
+                               "IB" = "#6FB2C1",
+                               "IIA" = "#DFB545",
+                               "IIB" = "#E29F3B",
+                               "IVA" = "#E77327",
+                               "IVB" = "#EA5D1E")) +
+  ylab("Number of Patients") +
+  xlab("") +
+  labs(fill = "1-Year Outcome", title = "Patient counts: outcomes by seizure onset pattern") +
+  theme_minimal() +
+  theme(
+    panel.background = element_rect(fill = "transparent", color = NA),
+    plot.background  = element_rect(fill = "transparent", color = NA),
+    panel.grid = element_blank(),
+    legend.title = element_blank()
+  )
+
+p
+```
+
+# FFPE tissue specific
+```{r}
+surgery_years <- c(2016, 2015, 2015, 2017, 2017, 2019, 2018, 2018, 2017, 2017, 2017, 2016)
+ffpe_sample_age <- 2025 - surgery_years
+
+x <- data.frame(table(ffpe_sample_age))
+colnames(x) <- c("age", "count")
+
+
+p <- ggplot(x, aes(y = age, x = count, fill = age)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(
+    x = "Count",
+    y = "Age (Years)",
+    fill = "Age",
+    title = "FFPE sample age at the time of omics experiments"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    legend.position = "none")
+
+p
+```
+
+
+
+
+
