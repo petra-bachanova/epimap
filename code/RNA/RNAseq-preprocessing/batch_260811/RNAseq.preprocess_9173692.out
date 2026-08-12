@@ -12,3 +12,1086 @@ For more information see https://docs.conda.io/projects/conda/en/stable/user-gui
 Your conda installation is not configured to use strict channel priorities. This is however crucial for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
 Creating conda environment ../env_config/alignment.yaml...
 Downloading and installing remote packages.
+Environment for /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/env_config/alignment.yaml created (location: .snakemake/conda/c8d32e38977ca6b5d6635459df2ac11e_)
+Creating conda environment ../env_config/featurecounts.yaml...
+Downloading and installing remote packages.
+Environment for /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/env_config/featurecounts.yaml created (location: .snakemake/conda/e19b110e7cee9497a5ca0c87731eb5a0_)
+Creating conda environment ../env_config/picard.yaml...
+Downloading and installing remote packages.
+Environment for /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/env_config/picard.yaml created (location: .snakemake/conda/a05fba0154b7b4444b0a9d14fa4c14b1_)
+Creating conda environment ../env_config/multiqc.yaml...
+Downloading and installing remote packages.
+Environment for /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/env_config/multiqc.yaml created (location: .snakemake/conda/b50c75478f723dc1d9f4884f6a43282c_)
+Creating conda environment ../env_config/samtools.yaml...
+Downloading and installing remote packages.
+Environment for /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/env_config/samtools.yaml created (location: .snakemake/conda/6bb802ac2782571d5264f2dd9edadc55_)
+Creating conda environment ../env_config/cutadapt.yaml...
+Downloading and installing remote packages.
+Environment for /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/env_config/cutadapt.yaml created (location: .snakemake/conda/a1c291aedc507b804b91099646c705e2_)
+Creating conda environment ../env_config/pcaplot.yaml...
+Downloading and installing remote packages.
+Environment for /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/env_config/pcaplot.yaml created (location: .snakemake/conda/6605ac50b3561ac8794c1ac9769ab35b_)
+Using shell: /usr/bin/bash
+Provided cluster nodes: 6
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+alignment                   12              1              1
+alignment_metrics           12              1              1
+all                          1              1              1
+featurecounts                1              1              1
+pca_plots                    1              1              1
+picard_collectmetrics       12              1              1
+picard_markdup              12              1              1
+trimming                    12              1              1
+total                       63              1              1
+
+Select jobs to execute...
+
+[Tue Aug 11 15:00:07 2026]
+rule trimming:
+    output: trimming/MTS013.R1.trim.fastq.gz, trimming/MTS013.R2.trim.fastq.gz, trimming/MTS013.cutadapt.report
+    jobid: 10
+    reason: Missing output files: trimming/MTS013.R1.trim.fastq.gz, trimming/MTS013.cutadapt.report, trimming/MTS013.R2.trim.fastq.gz
+    wildcards: sample=MTS013
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 10 with external jobid 'Submitted batch job 9174561'.
+
+[Tue Aug 11 15:00:07 2026]
+rule trimming:
+    output: trimming/MTS008.R1.trim.fastq.gz, trimming/MTS008.R2.trim.fastq.gz, trimming/MTS008.cutadapt.report
+    jobid: 12
+    reason: Missing output files: trimming/MTS008.R1.trim.fastq.gz, trimming/MTS008.R2.trim.fastq.gz, trimming/MTS008.cutadapt.report
+    wildcards: sample=MTS008
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 12 with external jobid 'Submitted batch job 9174562'.
+
+[Tue Aug 11 15:00:07 2026]
+rule trimming:
+    output: trimming/MTS037.R1.trim.fastq.gz, trimming/MTS037.R2.trim.fastq.gz, trimming/MTS037.cutadapt.report
+    jobid: 2
+    reason: Missing output files: trimming/MTS037.cutadapt.report, trimming/MTS037.R1.trim.fastq.gz, trimming/MTS037.R2.trim.fastq.gz
+    wildcards: sample=MTS037
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 2 with external jobid 'Submitted batch job 9174563'.
+
+[Tue Aug 11 15:00:07 2026]
+rule trimming:
+    output: trimming/MTS063.R1.trim.fastq.gz, trimming/MTS063.R2.trim.fastq.gz, trimming/MTS063.cutadapt.report
+    jobid: 3
+    reason: Missing output files: trimming/MTS063.cutadapt.report, trimming/MTS063.R1.trim.fastq.gz, trimming/MTS063.R2.trim.fastq.gz
+    wildcards: sample=MTS063
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 3 with external jobid 'Submitted batch job 9174564'.
+
+[Tue Aug 11 15:00:07 2026]
+rule trimming:
+    output: trimming/MTS035.R1.trim.fastq.gz, trimming/MTS035.R2.trim.fastq.gz, trimming/MTS035.cutadapt.report
+    jobid: 6
+    reason: Missing output files: trimming/MTS035.cutadapt.report, trimming/MTS035.R1.trim.fastq.gz, trimming/MTS035.R2.trim.fastq.gz
+    wildcards: sample=MTS035
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 6 with external jobid 'Submitted batch job 9174565'.
+
+[Tue Aug 11 15:00:07 2026]
+rule trimming:
+    output: trimming/MTS003.R1.trim.fastq.gz, trimming/MTS003.R2.trim.fastq.gz, trimming/MTS003.cutadapt.report
+    jobid: 8
+    reason: Missing output files: trimming/MTS003.R2.trim.fastq.gz, trimming/MTS003.R1.trim.fastq.gz, trimming/MTS003.cutadapt.report
+    wildcards: sample=MTS003
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 8 with external jobid 'Submitted batch job 9174566'.
+[Tue Aug 11 15:02:04 2026]
+Finished job 10.
+1 of 63 steps (2%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:02:04 2026]
+rule trimming:
+    output: trimming/MTS036.R1.trim.fastq.gz, trimming/MTS036.R2.trim.fastq.gz, trimming/MTS036.cutadapt.report
+    jobid: 4
+    reason: Missing output files: trimming/MTS036.R1.trim.fastq.gz, trimming/MTS036.R2.trim.fastq.gz, trimming/MTS036.cutadapt.report
+    wildcards: sample=MTS036
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 4 with external jobid 'Submitted batch job 9174570'.
+[Tue Aug 11 15:02:05 2026]
+Finished job 12.
+2 of 63 steps (3%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:02:05 2026]
+rule trimming:
+    output: trimming/MTS009.R1.trim.fastq.gz, trimming/MTS009.R2.trim.fastq.gz, trimming/MTS009.cutadapt.report
+    jobid: 1
+    reason: Missing output files: trimming/MTS009.R2.trim.fastq.gz, trimming/MTS009.R1.trim.fastq.gz, trimming/MTS009.cutadapt.report
+    wildcards: sample=MTS009
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 1 with external jobid 'Submitted batch job 9174571'.
+[Tue Aug 11 15:03:34 2026]
+Finished job 2.
+3 of 63 steps (5%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:03:35 2026]
+rule trimming:
+    output: trimming/MTS058.R1.trim.fastq.gz, trimming/MTS058.R2.trim.fastq.gz, trimming/MTS058.cutadapt.report
+    jobid: 11
+    reason: Missing output files: trimming/MTS058.cutadapt.report, trimming/MTS058.R1.trim.fastq.gz, trimming/MTS058.R2.trim.fastq.gz
+    wildcards: sample=MTS058
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 11 with external jobid 'Submitted batch job 9174576'.
+[Tue Aug 11 15:04:25 2026]
+Finished job 3.
+4 of 63 steps (6%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:04:25 2026]
+rule alignment:
+    input: trimming/MTS063.R1.trim.fastq.gz, trimming/MTS063.R2.trim.fastq.gz
+    output: alignment/MTS063.srt.bam, alignment/MTS063.srt.bam.bai
+    jobid: 15
+    reason: Missing output files: alignment/MTS063.srt.bam, alignment/MTS063.srt.bam.bai; Input files updated by another job: trimming/MTS063.R1.trim.fastq.gz, trimming/MTS063.R2.trim.fastq.gz
+    wildcards: sample=MTS063
+    resources: mem_mb=40000, disk_mb=3593, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 15 with external jobid 'Submitted batch job 9174578'.
+[Tue Aug 11 15:05:15 2026]
+Finished job 6.
+5 of 63 steps (8%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:05:15 2026]
+rule trimming:
+    output: trimming/MTS041.R1.trim.fastq.gz, trimming/MTS041.R2.trim.fastq.gz, trimming/MTS041.cutadapt.report
+    jobid: 9
+    reason: Missing output files: trimming/MTS041.R2.trim.fastq.gz, trimming/MTS041.R1.trim.fastq.gz, trimming/MTS041.cutadapt.report
+    wildcards: sample=MTS041
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 9 with external jobid 'Submitted batch job 9174579'.
+[Tue Aug 11 15:05:55 2026]
+Finished job 8.
+6 of 63 steps (10%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:05:55 2026]
+rule alignment:
+    input: trimming/MTS008.R1.trim.fastq.gz, trimming/MTS008.R2.trim.fastq.gz
+    output: alignment/MTS008.srt.bam, alignment/MTS008.srt.bam.bai
+    jobid: 24
+    reason: Missing output files: alignment/MTS008.srt.bam, alignment/MTS008.srt.bam.bai; Input files updated by another job: trimming/MTS008.R1.trim.fastq.gz, trimming/MTS008.R2.trim.fastq.gz
+    wildcards: sample=MTS008
+    resources: mem_mb=40000, disk_mb=3895, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 24 with external jobid 'Submitted batch job 9174580'.
+[Tue Aug 11 15:06:45 2026]
+Finished job 4.
+7 of 63 steps (11%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:06:45 2026]
+rule trimming:
+    output: trimming/MTS005.R1.trim.fastq.gz, trimming/MTS005.R2.trim.fastq.gz, trimming/MTS005.cutadapt.report
+    jobid: 7
+    reason: Missing output files: trimming/MTS005.cutadapt.report, trimming/MTS005.R1.trim.fastq.gz, trimming/MTS005.R2.trim.fastq.gz
+    wildcards: sample=MTS005
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 7 with external jobid 'Submitted batch job 9174581'.
+[Tue Aug 11 15:08:15 2026]
+Finished job 1.
+8 of 63 steps (13%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:08:15 2026]
+rule alignment:
+    input: trimming/MTS009.R1.trim.fastq.gz, trimming/MTS009.R2.trim.fastq.gz
+    output: alignment/MTS009.srt.bam, alignment/MTS009.srt.bam.bai
+    jobid: 13
+    reason: Missing output files: alignment/MTS009.srt.bam, alignment/MTS009.srt.bam.bai; Input files updated by another job: trimming/MTS009.R2.trim.fastq.gz, trimming/MTS009.R1.trim.fastq.gz
+    wildcards: sample=MTS009
+    resources: mem_mb=40000, disk_mb=3972, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 13 with external jobid 'Submitted batch job 9174585'.
+[Tue Aug 11 15:08:16 2026]
+Finished job 11.
+9 of 63 steps (14%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:08:16 2026]
+rule alignment:
+    input: trimming/MTS058.R1.trim.fastq.gz, trimming/MTS058.R2.trim.fastq.gz
+    output: alignment/MTS058.srt.bam, alignment/MTS058.srt.bam.bai
+    jobid: 23
+    reason: Missing output files: alignment/MTS058.srt.bam, alignment/MTS058.srt.bam.bai; Input files updated by another job: trimming/MTS058.R1.trim.fastq.gz, trimming/MTS058.R2.trim.fastq.gz
+    wildcards: sample=MTS058
+    resources: mem_mb=40000, disk_mb=3418, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 23 with external jobid 'Submitted batch job 9174586'.
+[Tue Aug 11 15:10:06 2026]
+Finished job 9.
+10 of 63 steps (16%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:10:06 2026]
+rule alignment:
+    input: trimming/MTS041.R1.trim.fastq.gz, trimming/MTS041.R2.trim.fastq.gz
+    output: alignment/MTS041.srt.bam, alignment/MTS041.srt.bam.bai
+    jobid: 21
+    reason: Missing output files: alignment/MTS041.srt.bam, alignment/MTS041.srt.bam.bai; Input files updated by another job: trimming/MTS041.R2.trim.fastq.gz, trimming/MTS041.R1.trim.fastq.gz
+    wildcards: sample=MTS041
+    resources: mem_mb=40000, disk_mb=3856, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 21 with external jobid 'Submitted batch job 9174589'.
+[Tue Aug 11 15:11:46 2026]
+Finished job 7.
+11 of 63 steps (17%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:11:46 2026]
+rule alignment:
+    input: trimming/MTS005.R1.trim.fastq.gz, trimming/MTS005.R2.trim.fastq.gz
+    output: alignment/MTS005.srt.bam, alignment/MTS005.srt.bam.bai
+    jobid: 19
+    reason: Missing output files: alignment/MTS005.srt.bam.bai, alignment/MTS005.srt.bam; Input files updated by another job: trimming/MTS005.R1.trim.fastq.gz, trimming/MTS005.R2.trim.fastq.gz
+    wildcards: sample=MTS005
+    resources: mem_mb=40000, disk_mb=4249, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 19 with external jobid 'Submitted batch job 9174591'.
+[Tue Aug 11 15:22:27 2026]
+Finished job 24.
+12 of 63 steps (19%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:22:28 2026]
+rule alignment_metrics:
+    input: alignment/MTS008.srt.bam
+    output: alignment/stats/MTS008.srt.bam.flagstat, alignment/stats/MTS008.srt.bam.idxstats
+    jobid: 36
+    reason: Missing output files: alignment/stats/MTS008.srt.bam.flagstat; Input files updated by another job: alignment/MTS008.srt.bam
+    wildcards: sample=MTS008
+    resources: mem_mb=20000, disk_mb=4488, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 36 with external jobid 'Submitted batch job 9174597'.
+[Tue Aug 11 15:23:07 2026]
+Finished job 36.
+13 of 63 steps (21%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:23:08 2026]
+rule alignment:
+    input: trimming/MTS013.R1.trim.fastq.gz, trimming/MTS013.R2.trim.fastq.gz
+    output: alignment/MTS013.srt.bam, alignment/MTS013.srt.bam.bai
+    jobid: 22
+    reason: Missing output files: alignment/MTS013.srt.bam.bai, alignment/MTS013.srt.bam; Input files updated by another job: trimming/MTS013.R2.trim.fastq.gz, trimming/MTS013.R1.trim.fastq.gz
+    wildcards: sample=MTS013
+    resources: mem_mb=40000, disk_mb=4212, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 22 with external jobid 'Submitted batch job 9174598'.
+[Tue Aug 11 15:23:38 2026]
+Finished job 23.
+14 of 63 steps (22%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:23:38 2026]
+rule picard_markdup:
+    input: alignment/MTS058.srt.bam
+    output: markdup/MTS058.mkdup.bam
+    jobid: 47
+    reason: Missing output files: markdup/MTS058.mkdup.bam; Input files updated by another job: alignment/MTS058.srt.bam
+    wildcards: sample=MTS058
+    resources: mem_mb=20000, disk_mb=4060, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 47 with external jobid 'Submitted batch job 9174603'.
+[Tue Aug 11 15:25:58 2026]
+Finished job 21.
+15 of 63 steps (24%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:25:58 2026]
+rule picard_markdup:
+    input: alignment/MTS041.srt.bam
+    output: markdup/MTS041.mkdup.bam
+    jobid: 45
+    reason: Missing output files: markdup/MTS041.mkdup.bam; Input files updated by another job: alignment/MTS041.srt.bam
+    wildcards: sample=MTS041
+    resources: mem_mb=20000, disk_mb=4342, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 45 with external jobid 'Submitted batch job 9174623'.
+[Tue Aug 11 15:27:38 2026]
+Finished job 13.
+16 of 63 steps (25%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:27:38 2026]
+rule picard_markdup:
+    input: alignment/MTS009.srt.bam
+    output: markdup/MTS009.mkdup.bam
+    jobid: 37
+    reason: Missing output files: markdup/MTS009.mkdup.bam; Input files updated by another job: alignment/MTS009.srt.bam
+    wildcards: sample=MTS009
+    resources: mem_mb=20000, disk_mb=4699, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 37 with external jobid 'Submitted batch job 9174637'.
+[Tue Aug 11 15:29:18 2026]
+Finished job 15.
+17 of 63 steps (27%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:29:18 2026]
+rule alignment_metrics:
+    input: alignment/MTS041.srt.bam
+    output: alignment/stats/MTS041.srt.bam.flagstat, alignment/stats/MTS041.srt.bam.idxstats
+    jobid: 33
+    reason: Missing output files: alignment/stats/MTS041.srt.bam.flagstat; Input files updated by another job: alignment/MTS041.srt.bam
+    wildcards: sample=MTS041
+    resources: mem_mb=20000, disk_mb=4342, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 33 with external jobid 'Submitted batch job 9174650'.
+[Tue Aug 11 15:29:58 2026]
+Finished job 19.
+18 of 63 steps (29%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:29:59 2026]
+rule trimming:
+    output: trimming/MTS065.R1.trim.fastq.gz, trimming/MTS065.R2.trim.fastq.gz, trimming/MTS065.cutadapt.report
+    jobid: 5
+    reason: Missing output files: trimming/MTS065.cutadapt.report, trimming/MTS065.R2.trim.fastq.gz, trimming/MTS065.R1.trim.fastq.gz
+    wildcards: sample=MTS065
+    resources: mem_mb=60000, disk_mb=1000, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=2:00:00
+
+Submitted job 5 with external jobid 'Submitted batch job 9174653'.
+[Tue Aug 11 15:30:09 2026]
+Finished job 33.
+19 of 63 steps (30%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:30:09 2026]
+rule picard_markdup:
+    input: alignment/MTS063.srt.bam
+    output: markdup/MTS063.mkdup.bam
+    jobid: 39
+    reason: Missing output files: markdup/MTS063.mkdup.bam; Input files updated by another job: alignment/MTS063.srt.bam
+    wildcards: sample=MTS063
+    resources: mem_mb=20000, disk_mb=4502, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 39 with external jobid 'Submitted batch job 9174654'.
+[Tue Aug 11 15:31:49 2026]
+Finished job 5.
+20 of 63 steps (32%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:31:49 2026]
+rule picard_markdup:
+    input: alignment/MTS005.srt.bam
+    output: markdup/MTS005.mkdup.bam
+    jobid: 43
+    reason: Missing output files: markdup/MTS005.mkdup.bam; Input files updated by another job: alignment/MTS005.srt.bam
+    wildcards: sample=MTS005
+    resources: mem_mb=20000, disk_mb=5423, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 43 with external jobid 'Submitted batch job 9174658'.
+[Tue Aug 11 15:33:29 2026]
+Finished job 47.
+21 of 63 steps (33%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:33:29 2026]
+rule alignment:
+    input: trimming/MTS035.R1.trim.fastq.gz, trimming/MTS035.R2.trim.fastq.gz
+    output: alignment/MTS035.srt.bam, alignment/MTS035.srt.bam.bai
+    jobid: 18
+    reason: Missing output files: alignment/MTS035.srt.bam, alignment/MTS035.srt.bam.bai; Input files updated by another job: trimming/MTS035.R1.trim.fastq.gz, trimming/MTS035.R2.trim.fastq.gz
+    wildcards: sample=MTS035
+    resources: mem_mb=40000, disk_mb=3865, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 18 with external jobid 'Submitted batch job 9174659'.
+[Tue Aug 11 15:37:09 2026]
+Finished job 45.
+22 of 63 steps (35%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:37:10 2026]
+rule alignment:
+    input: trimming/MTS003.R1.trim.fastq.gz, trimming/MTS003.R2.trim.fastq.gz
+    output: alignment/MTS003.srt.bam, alignment/MTS003.srt.bam.bai
+    jobid: 20
+    reason: Missing output files: alignment/MTS003.srt.bam, alignment/MTS003.srt.bam.bai; Input files updated by another job: trimming/MTS003.R2.trim.fastq.gz, trimming/MTS003.R1.trim.fastq.gz
+    wildcards: sample=MTS003
+    resources: mem_mb=40000, disk_mb=4208, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 20 with external jobid 'Submitted batch job 9174666'.
+[Tue Aug 11 15:38:50 2026]
+Finished job 37.
+23 of 63 steps (37%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:38:50 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS009.mkdup.bam
+    output: metrics/picard/MTS009.picard.rna.metrics.txt
+    jobid: 49
+    reason: Missing output files: metrics/picard/MTS009.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS009.mkdup.bam
+    wildcards: sample=MTS009
+    resources: mem_mb=20000, disk_mb=5189, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 49 with external jobid 'Submitted batch job 9174670'.
+[Tue Aug 11 15:40:30 2026]
+Finished job 22.
+24 of 63 steps (38%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:40:30 2026]
+rule picard_markdup:
+    input: alignment/MTS008.srt.bam
+    output: markdup/MTS008.mkdup.bam
+    jobid: 48
+    reason: Missing output files: markdup/MTS008.mkdup.bam; Input files updated by another job: alignment/MTS008.srt.bam
+    wildcards: sample=MTS008
+    resources: mem_mb=20000, disk_mb=4488, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 48 with external jobid 'Submitted batch job 9174671'.
+[Tue Aug 11 15:41:10 2026]
+Finished job 39.
+25 of 63 steps (40%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:41:10 2026]
+rule alignment:
+    input: trimming/MTS065.R1.trim.fastq.gz, trimming/MTS065.R2.trim.fastq.gz
+    output: alignment/MTS065.srt.bam, alignment/MTS065.srt.bam.bai
+    jobid: 17
+    reason: Missing output files: alignment/MTS065.srt.bam, alignment/MTS065.srt.bam.bai; Input files updated by another job: trimming/MTS065.R2.trim.fastq.gz, trimming/MTS065.R1.trim.fastq.gz
+    wildcards: sample=MTS065
+    resources: mem_mb=40000, disk_mb=3554, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 17 with external jobid 'Submitted batch job 9174674'.
+[Tue Aug 11 15:42:50 2026]
+Finished job 43.
+26 of 63 steps (41%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:42:51 2026]
+rule alignment_metrics:
+    input: alignment/MTS013.srt.bam
+    output: alignment/stats/MTS013.srt.bam.flagstat, alignment/stats/MTS013.srt.bam.idxstats
+    jobid: 34
+    reason: Missing output files: alignment/stats/MTS013.srt.bam.flagstat; Input files updated by another job: alignment/MTS013.srt.bam
+    wildcards: sample=MTS013
+    resources: mem_mb=20000, disk_mb=5065, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 34 with external jobid 'Submitted batch job 9174676'.
+Waiting at most 60 seconds for missing files.
+[Tue Aug 11 15:43:51 2026]
+Finished job 34.
+27 of 63 steps (43%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:43:52 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS063.mkdup.bam
+    output: metrics/picard/MTS063.picard.rna.metrics.txt
+    jobid: 51
+    reason: Missing output files: metrics/picard/MTS063.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS063.mkdup.bam
+    wildcards: sample=MTS063
+    resources: mem_mb=20000, disk_mb=5007, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 51 with external jobid 'Submitted batch job 9174677'.
+[Tue Aug 11 15:47:31 2026]
+Finished job 49.
+28 of 63 steps (44%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:47:31 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS005.mkdup.bam
+    output: metrics/picard/MTS005.picard.rna.metrics.txt
+    jobid: 55
+    reason: Missing output files: metrics/picard/MTS005.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS005.mkdup.bam
+    wildcards: sample=MTS005
+    resources: mem_mb=20000, disk_mb=5917, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 55 with external jobid 'Submitted batch job 9174684'.
+[Tue Aug 11 15:50:11 2026]
+Finished job 48.
+29 of 63 steps (46%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:50:11 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS008.mkdup.bam
+    output: metrics/picard/MTS008.picard.rna.metrics.txt
+    jobid: 60
+    reason: Missing output files: metrics/picard/MTS008.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS008.mkdup.bam
+    wildcards: sample=MTS008
+    resources: mem_mb=20000, disk_mb=4945, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 60 with external jobid 'Submitted batch job 9174690'.
+[Tue Aug 11 15:50:51 2026]
+Finished job 51.
+30 of 63 steps (48%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:50:52 2026]
+rule alignment_metrics:
+    input: alignment/MTS058.srt.bam
+    output: alignment/stats/MTS058.srt.bam.flagstat, alignment/stats/MTS058.srt.bam.idxstats
+    jobid: 35
+    reason: Missing output files: alignment/stats/MTS058.srt.bam.flagstat; Input files updated by another job: alignment/MTS058.srt.bam
+    wildcards: sample=MTS058
+    resources: mem_mb=20000, disk_mb=4060, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 35 with external jobid 'Submitted batch job 9174691'.
+[Tue Aug 11 15:53:32 2026]
+Finished job 35.
+31 of 63 steps (49%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:53:32 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS058.mkdup.bam
+    output: metrics/picard/MTS058.picard.rna.metrics.txt
+    jobid: 59
+    reason: Missing output files: metrics/picard/MTS058.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS058.mkdup.bam
+    wildcards: sample=MTS058
+    resources: mem_mb=20000, disk_mb=4457, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 59 with external jobid 'Submitted batch job 9174698'.
+[Tue Aug 11 15:54:12 2026]
+Finished job 20.
+32 of 63 steps (51%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:54:12 2026]
+rule alignment_metrics:
+    input: alignment/MTS003.srt.bam
+    output: alignment/stats/MTS003.srt.bam.flagstat, alignment/stats/MTS003.srt.bam.idxstats
+    jobid: 32
+    reason: Missing output files: alignment/stats/MTS003.srt.bam.flagstat; Input files updated by another job: alignment/MTS003.srt.bam
+    wildcards: sample=MTS003
+    resources: mem_mb=20000, disk_mb=5034, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 32 with external jobid 'Submitted batch job 9174699'.
+[Tue Aug 11 15:55:52 2026]
+Finished job 32.
+33 of 63 steps (52%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:55:52 2026]
+rule alignment:
+    input: trimming/MTS037.R1.trim.fastq.gz, trimming/MTS037.R2.trim.fastq.gz
+    output: alignment/MTS037.srt.bam, alignment/MTS037.srt.bam.bai
+    jobid: 14
+    reason: Missing output files: alignment/MTS037.srt.bam.bai, alignment/MTS037.srt.bam; Input files updated by another job: trimming/MTS037.R1.trim.fastq.gz, trimming/MTS037.R2.trim.fastq.gz
+    wildcards: sample=MTS037
+    resources: mem_mb=40000, disk_mb=4005, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 14 with external jobid 'Submitted batch job 9174782'.
+[Tue Aug 11 15:57:32 2026]
+Finished job 18.
+34 of 63 steps (54%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:57:32 2026]
+rule alignment_metrics:
+    input: alignment/MTS035.srt.bam
+    output: alignment/stats/MTS035.srt.bam.flagstat, alignment/stats/MTS035.srt.bam.idxstats
+    jobid: 30
+    reason: Missing output files: alignment/stats/MTS035.srt.bam.flagstat; Input files updated by another job: alignment/MTS035.srt.bam
+    wildcards: sample=MTS035
+    resources: mem_mb=20000, disk_mb=4704, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 30 with external jobid 'Submitted batch job 9174825'.
+[Tue Aug 11 15:57:32 2026]
+Finished job 17.
+35 of 63 steps (56%) done
+[Tue Aug 11 15:57:33 2026]
+Finished job 55.
+36 of 63 steps (57%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:57:33 2026]
+rule alignment_metrics:
+    input: alignment/MTS009.srt.bam
+    output: alignment/stats/MTS009.srt.bam.flagstat, alignment/stats/MTS009.srt.bam.idxstats
+    jobid: 25
+    reason: Missing output files: alignment/stats/MTS009.srt.bam.flagstat; Input files updated by another job: alignment/MTS009.srt.bam
+    wildcards: sample=MTS009
+    resources: mem_mb=20000, disk_mb=4699, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 25 with external jobid 'Submitted batch job 9174826'.
+
+[Tue Aug 11 15:57:33 2026]
+rule picard_markdup:
+    input: alignment/MTS035.srt.bam
+    output: markdup/MTS035.mkdup.bam
+    jobid: 42
+    reason: Missing output files: markdup/MTS035.mkdup.bam; Input files updated by another job: alignment/MTS035.srt.bam
+    wildcards: sample=MTS035
+    resources: mem_mb=20000, disk_mb=4704, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 42 with external jobid 'Submitted batch job 9174827'.
+Select jobs to execute...
+[Tue Aug 11 15:57:42 2026]
+Finished job 60.
+37 of 63 steps (59%) done
+
+[Tue Aug 11 15:57:42 2026]
+rule picard_markdup:
+    input: alignment/MTS065.srt.bam
+    output: markdup/MTS065.mkdup.bam
+    jobid: 41
+    reason: Missing output files: markdup/MTS065.mkdup.bam; Input files updated by another job: alignment/MTS065.srt.bam
+    wildcards: sample=MTS065
+    resources: mem_mb=20000, disk_mb=4461, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 41 with external jobid 'Submitted batch job 9174829'.
+Waiting at most 60 seconds for missing files.
+[Tue Aug 11 15:58:33 2026]
+Finished job 30.
+38 of 63 steps (60%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:58:34 2026]
+rule alignment_metrics:
+    input: alignment/MTS065.srt.bam
+    output: alignment/stats/MTS065.srt.bam.flagstat, alignment/stats/MTS065.srt.bam.idxstats
+    jobid: 29
+    reason: Missing output files: alignment/stats/MTS065.srt.bam.flagstat; Input files updated by another job: alignment/MTS065.srt.bam
+    wildcards: sample=MTS065
+    resources: mem_mb=20000, disk_mb=4461, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 29 with external jobid 'Submitted batch job 9174867'.
+[Tue Aug 11 15:58:34 2026]
+Finished job 25.
+39 of 63 steps (62%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:58:34 2026]
+rule alignment:
+    input: trimming/MTS036.R1.trim.fastq.gz, trimming/MTS036.R2.trim.fastq.gz
+    output: alignment/MTS036.srt.bam, alignment/MTS036.srt.bam.bai
+    jobid: 16
+    reason: Missing output files: alignment/MTS036.srt.bam, alignment/MTS036.srt.bam.bai; Input files updated by another job: trimming/MTS036.R1.trim.fastq.gz, trimming/MTS036.R2.trim.fastq.gz
+    wildcards: sample=MTS036
+    resources: mem_mb=40000, disk_mb=4226, tmpdir=<TBD>, cpus=4, time_min=60, maxtime=8:00:00
+
+Submitted job 16 with external jobid 'Submitted batch job 9174868'.
+[Tue Aug 11 15:59:14 2026]
+Finished job 29.
+40 of 63 steps (63%) done
+Select jobs to execute...
+
+[Tue Aug 11 15:59:14 2026]
+rule alignment_metrics:
+    input: alignment/MTS005.srt.bam
+    output: alignment/stats/MTS005.srt.bam.flagstat, alignment/stats/MTS005.srt.bam.idxstats
+    jobid: 31
+    reason: Missing output files: alignment/stats/MTS005.srt.bam.flagstat; Input files updated by another job: alignment/MTS005.srt.bam
+    wildcards: sample=MTS005
+    resources: mem_mb=20000, disk_mb=5423, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 31 with external jobid 'Submitted batch job 9174890'.
+[Tue Aug 11 16:00:54 2026]
+Finished job 59.
+41 of 63 steps (65%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:00:54 2026]
+rule picard_markdup:
+    input: alignment/MTS013.srt.bam
+    output: markdup/MTS013.mkdup.bam
+    jobid: 46
+    reason: Missing output files: markdup/MTS013.mkdup.bam; Input files updated by another job: alignment/MTS013.srt.bam
+    wildcards: sample=MTS013
+    resources: mem_mb=20000, disk_mb=5065, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 46 with external jobid 'Submitted batch job 9174941'.
+[Tue Aug 11 16:00:54 2026]
+Finished job 31.
+42 of 63 steps (67%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:00:55 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS041.mkdup.bam
+    output: metrics/picard/MTS041.picard.rna.metrics.txt
+    jobid: 57
+    reason: Missing output files: metrics/picard/MTS041.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS041.mkdup.bam
+    wildcards: sample=MTS041
+    resources: mem_mb=20000, disk_mb=4833, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 57 with external jobid 'Submitted batch job 9174942'.
+[Tue Aug 11 16:07:35 2026]
+Finished job 57.
+43 of 63 steps (68%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:07:35 2026]
+rule alignment_metrics:
+    input: alignment/MTS063.srt.bam
+    output: alignment/stats/MTS063.srt.bam.flagstat, alignment/stats/MTS063.srt.bam.idxstats
+    jobid: 27
+    reason: Missing output files: alignment/stats/MTS063.srt.bam.flagstat; Input files updated by another job: alignment/MTS063.srt.bam
+    wildcards: sample=MTS063
+    resources: mem_mb=20000, disk_mb=4502, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 27 with external jobid 'Submitted batch job 9175063'.
+[Tue Aug 11 16:08:15 2026]
+Finished job 42.
+44 of 63 steps (70%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:08:15 2026]
+rule picard_markdup:
+    input: alignment/MTS003.srt.bam
+    output: markdup/MTS003.mkdup.bam
+    jobid: 44
+    reason: Missing output files: markdup/MTS003.mkdup.bam; Input files updated by another job: alignment/MTS003.srt.bam
+    wildcards: sample=MTS003
+    resources: mem_mb=20000, disk_mb=5034, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 44 with external jobid 'Submitted batch job 9175108'.
+[Tue Aug 11 16:08:25 2026]
+Finished job 41.
+45 of 63 steps (71%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:08:25 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS065.mkdup.bam
+    output: metrics/picard/MTS065.picard.rna.metrics.txt
+    jobid: 53
+    reason: Missing output files: metrics/picard/MTS065.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS065.mkdup.bam
+    wildcards: sample=MTS065
+    resources: mem_mb=20000, disk_mb=4941, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 53 with external jobid 'Submitted batch job 9175109'.
+Waiting at most 60 seconds for missing files.
+[Tue Aug 11 16:08:36 2026]
+Finished job 27.
+46 of 63 steps (73%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:08:36 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS035.mkdup.bam
+    output: metrics/picard/MTS035.picard.rna.metrics.txt
+    jobid: 54
+    reason: Missing output files: metrics/picard/MTS035.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS035.mkdup.bam
+    wildcards: sample=MTS035
+    resources: mem_mb=20000, disk_mb=5180, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 54 with external jobid 'Submitted batch job 9175111'.
+[Tue Aug 11 16:11:16 2026]
+Finished job 14.
+47 of 63 steps (75%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:11:16 2026]
+rule alignment_metrics:
+    input: alignment/MTS037.srt.bam
+    output: alignment/stats/MTS037.srt.bam.flagstat, alignment/stats/MTS037.srt.bam.idxstats
+    jobid: 26
+    reason: Missing output files: alignment/stats/MTS037.srt.bam.flagstat; Input files updated by another job: alignment/MTS037.srt.bam
+    wildcards: sample=MTS037
+    resources: mem_mb=20000, disk_mb=5235, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 26 with external jobid 'Submitted batch job 9175215'.
+[Tue Aug 11 16:11:56 2026]
+Finished job 46.
+48 of 63 steps (76%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:11:56 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS013.mkdup.bam
+    output: metrics/picard/MTS013.picard.rna.metrics.txt
+    jobid: 58
+    reason: Missing output files: metrics/picard/MTS013.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS013.mkdup.bam
+    wildcards: sample=MTS013
+    resources: mem_mb=20000, disk_mb=5540, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 58 with external jobid 'Submitted batch job 9175218'.
+[Tue Aug 11 16:11:56 2026]
+Finished job 26.
+49 of 63 steps (78%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:11:56 2026]
+rule picard_markdup:
+    input: alignment/MTS037.srt.bam
+    output: markdup/MTS037.mkdup.bam
+    jobid: 38
+    reason: Missing output files: markdup/MTS037.mkdup.bam; Input files updated by another job: alignment/MTS037.srt.bam
+    wildcards: sample=MTS037
+    resources: mem_mb=20000, disk_mb=5235, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 38 with external jobid 'Submitted batch job 9175219'.
+[Tue Aug 11 16:16:46 2026]
+Finished job 53.
+50 of 63 steps (79%) done
+[Tue Aug 11 16:16:49 2026]
+Finished job 54.
+51 of 63 steps (81%) done
+[Tue Aug 11 16:20:17 2026]
+Finished job 44.
+52 of 63 steps (83%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:20:17 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS003.mkdup.bam
+    output: metrics/picard/MTS003.picard.rna.metrics.txt
+    jobid: 56
+    reason: Missing output files: metrics/picard/MTS003.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS003.mkdup.bam
+    wildcards: sample=MTS003
+    resources: mem_mb=20000, disk_mb=5558, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 56 with external jobid 'Submitted batch job 9175228'.
+[Tue Aug 11 16:20:27 2026]
+Finished job 58.
+53 of 63 steps (84%) done
+[Tue Aug 11 16:22:57 2026]
+Finished job 38.
+54 of 63 steps (86%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:22:57 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS037.mkdup.bam
+    output: metrics/picard/MTS037.picard.rna.metrics.txt
+    jobid: 50
+    reason: Missing output files: metrics/picard/MTS037.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS037.mkdup.bam
+    wildcards: sample=MTS037
+    resources: mem_mb=20000, disk_mb=5667, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 50 with external jobid 'Submitted batch job 9175232'.
+[Tue Aug 11 16:23:27 2026]
+Finished job 16.
+55 of 63 steps (87%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:23:27 2026]
+rule featurecounts:
+    input: alignment/MTS009.srt.bam, alignment/MTS037.srt.bam, alignment/MTS063.srt.bam, alignment/MTS036.srt.bam, alignment/MTS065.srt.bam, alignment/MTS035.srt.bam, alignment/MTS005.srt.bam, alignment/MTS003.srt.bam, alignment/MTS041.srt.bam, alignment/MTS013.srt.bam, alignment/MTS058.srt.bam, alignment/MTS008.srt.bam
+    output: featurecounts/featurecounts.readcounts.tsv, featurecounts/featurecounts.readcounts.ann.tsv, featurecounts/featurecounts.readcounts_tpm.tsv, featurecounts/featurecounts.readcounts_tpm.ann.tsv, featurecounts/featurecounts.readcounts_rpkm.tsv, featurecounts/featurecounts.readcounts_rpkm.ann.tsv, featurecounts/featurecounts.readcounts_fpkm.tsv, featurecounts/featurecounts.readcounts_fpkm.ann.tsv
+    jobid: 61
+    reason: Missing output files: featurecounts/featurecounts.readcounts.tsv, featurecounts/featurecounts.readcounts_tpm.tsv, featurecounts/featurecounts.readcounts_rpkm.tsv, featurecounts/featurecounts.readcounts.ann.tsv, featurecounts/featurecounts.readcounts_rpkm.ann.tsv, featurecounts/featurecounts.readcounts_fpkm.tsv, featurecounts/featurecounts.readcounts_tpm.ann.tsv, featurecounts/featurecounts.readcounts_fpkm.ann.tsv; Input files updated by another job: alignment/MTS065.srt.bam, alignment/MTS037.srt.bam, alignment/MTS005.srt.bam, alignment/MTS063.srt.bam, alignment/MTS008.srt.bam, alignment/MTS058.srt.bam, alignment/MTS041.srt.bam, alignment/MTS009.srt.bam, alignment/MTS003.srt.bam, alignment/MTS036.srt.bam, alignment/MTS013.srt.bam, alignment/MTS035.srt.bam
+    resources: mem_mb=100000, disk_mb=57247, tmpdir=<TBD>, cpus=10, time_min=60, maxtime=8:00:00
+
+Submitted job 61 with external jobid 'Submitted batch job 9175233'.
+
+[Tue Aug 11 16:23:28 2026]
+rule alignment_metrics:
+    input: alignment/MTS036.srt.bam
+    output: alignment/stats/MTS036.srt.bam.flagstat, alignment/stats/MTS036.srt.bam.idxstats
+    jobid: 28
+    reason: Missing output files: alignment/stats/MTS036.srt.bam.flagstat; Input files updated by another job: alignment/MTS036.srt.bam
+    wildcards: sample=MTS036
+    resources: mem_mb=20000, disk_mb=5234, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 28 with external jobid 'Submitted batch job 9175234'.
+
+[Tue Aug 11 16:23:28 2026]
+rule picard_markdup:
+    input: alignment/MTS036.srt.bam
+    output: markdup/MTS036.mkdup.bam
+    jobid: 40
+    reason: Missing output files: markdup/MTS036.mkdup.bam; Input files updated by another job: alignment/MTS036.srt.bam
+    wildcards: sample=MTS036
+    resources: mem_mb=20000, disk_mb=5234, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=30:00
+
+Submitted job 40 with external jobid 'Submitted batch job 9175235'.
+[Tue Aug 11 16:24:07 2026]
+Finished job 28.
+56 of 63 steps (89%) done
+[Tue Aug 11 16:28:38 2026]
+Finished job 56.
+57 of 63 steps (90%) done
+[Tue Aug 11 16:33:09 2026]
+Finished job 50.
+58 of 63 steps (92%) done
+[Tue Aug 11 16:34:39 2026]
+Finished job 40.
+59 of 63 steps (94%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:34:39 2026]
+rule picard_collectmetrics:
+    input: markdup/MTS036.mkdup.bam
+    output: metrics/picard/MTS036.picard.rna.metrics.txt
+    jobid: 52
+    reason: Missing output files: metrics/picard/MTS036.picard.rna.metrics.txt; Input files updated by another job: markdup/MTS036.mkdup.bam
+    wildcards: sample=MTS036
+    resources: mem_mb=20000, disk_mb=5750, tmpdir=<TBD>, cpus=2, time_min=60, maxtime=8:00:00
+
+Submitted job 52 with external jobid 'Submitted batch job 9175274'.
+[Tue Aug 11 16:43:21 2026]
+Finished job 61.
+60 of 63 steps (95%) done
+Select jobs to execute...
+
+[Tue Aug 11 16:43:21 2026]
+rule pca_plots:
+    input: featurecounts/featurecounts.readcounts.tsv
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    jobid: 62
+    reason: Missing output files: plots/PCA_top_PCA_variance_bar.png, plots/PCA_top_PC1_vs_PC2.png; Input files updated by another job: featurecounts/featurecounts.readcounts.tsv
+    resources: mem_mb=2000, disk_mb=1000, tmpdir=<TBD>, cpus=1, time_min=60, maxtime=1:00:00
+
+Submitted job 62 with external jobid 'Submitted batch job 9175281'.
+[Tue Aug 11 16:45:01 2026]
+Finished job 52.
+61 of 63 steps (97%) done
+[Tue Aug 11 16:46:31 2026]
+Error in rule pca_plots:
+    jobid: 62
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    conda-env: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/conda/6605ac50b3561ac8794c1ac9769ab35b_
+    shell:
+        
+        python scripts/pca_plotting.py         featurecounts/featurecounts.readcounts.tsv         plots
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 9175281
+
+Error executing rule pca_plots on cluster (jobid: 62, external: Submitted batch job 9175281, jobscript: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/tmp.0ii2dfj2/pca_plots.62). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 62.
+Select jobs to execute...
+
+[Tue Aug 11 16:46:31 2026]
+rule pca_plots:
+    input: featurecounts/featurecounts.readcounts.tsv
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    jobid: 62
+    reason: Missing output files: plots/PCA_top_PCA_variance_bar.png, plots/PCA_top_PC1_vs_PC2.png; Input files updated by another job: featurecounts/featurecounts.readcounts.tsv
+    resources: mem_mb=2000, disk_mb=1000, tmpdir=<TBD>, cpus=1, time_min=60, maxtime=1:00:00
+
+Submitted job 62 with external jobid 'Submitted batch job 9175283'.
+[Tue Aug 11 16:48:01 2026]
+Error in rule pca_plots:
+    jobid: 62
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    conda-env: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/conda/6605ac50b3561ac8794c1ac9769ab35b_
+    shell:
+        
+        python scripts/pca_plotting.py         featurecounts/featurecounts.readcounts.tsv         plots
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 9175283
+
+Error executing rule pca_plots on cluster (jobid: 62, external: Submitted batch job 9175283, jobscript: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/tmp.0ii2dfj2/pca_plots.62). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 62.
+Select jobs to execute...
+
+[Tue Aug 11 16:48:01 2026]
+rule pca_plots:
+    input: featurecounts/featurecounts.readcounts.tsv
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    jobid: 62
+    reason: Missing output files: plots/PCA_top_PCA_variance_bar.png, plots/PCA_top_PC1_vs_PC2.png; Input files updated by another job: featurecounts/featurecounts.readcounts.tsv
+    resources: mem_mb=2000, disk_mb=1000, tmpdir=<TBD>, cpus=1, time_min=60, maxtime=1:00:00
+
+Submitted job 62 with external jobid 'Submitted batch job 9175285'.
+[Tue Aug 11 16:48:31 2026]
+Error in rule pca_plots:
+    jobid: 62
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    conda-env: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/conda/6605ac50b3561ac8794c1ac9769ab35b_
+    shell:
+        
+        python scripts/pca_plotting.py         featurecounts/featurecounts.readcounts.tsv         plots
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 9175285
+
+Error executing rule pca_plots on cluster (jobid: 62, external: Submitted batch job 9175285, jobscript: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/tmp.0ii2dfj2/pca_plots.62). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 62.
+Select jobs to execute...
+
+[Tue Aug 11 16:48:31 2026]
+rule pca_plots:
+    input: featurecounts/featurecounts.readcounts.tsv
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    jobid: 62
+    reason: Missing output files: plots/PCA_top_PCA_variance_bar.png, plots/PCA_top_PC1_vs_PC2.png; Input files updated by another job: featurecounts/featurecounts.readcounts.tsv
+    resources: mem_mb=2000, disk_mb=1000, tmpdir=<TBD>, cpus=1, time_min=60, maxtime=1:00:00
+
+Submitted job 62 with external jobid 'Submitted batch job 9175287'.
+[Tue Aug 11 16:49:01 2026]
+Error in rule pca_plots:
+    jobid: 62
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    conda-env: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/conda/6605ac50b3561ac8794c1ac9769ab35b_
+    shell:
+        
+        python scripts/pca_plotting.py         featurecounts/featurecounts.readcounts.tsv         plots
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 9175287
+
+Error executing rule pca_plots on cluster (jobid: 62, external: Submitted batch job 9175287, jobscript: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/tmp.0ii2dfj2/pca_plots.62). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 62.
+Select jobs to execute...
+
+[Tue Aug 11 16:49:01 2026]
+rule pca_plots:
+    input: featurecounts/featurecounts.readcounts.tsv
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    jobid: 62
+    reason: Missing output files: plots/PCA_top_PCA_variance_bar.png, plots/PCA_top_PC1_vs_PC2.png; Input files updated by another job: featurecounts/featurecounts.readcounts.tsv
+    resources: mem_mb=2000, disk_mb=1000, tmpdir=<TBD>, cpus=1, time_min=60, maxtime=1:00:00
+
+Submitted job 62 with external jobid 'Submitted batch job 9175288'.
+[Tue Aug 11 16:49:31 2026]
+Error in rule pca_plots:
+    jobid: 62
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    conda-env: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/conda/6605ac50b3561ac8794c1ac9769ab35b_
+    shell:
+        
+        python scripts/pca_plotting.py         featurecounts/featurecounts.readcounts.tsv         plots
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 9175288
+
+Error executing rule pca_plots on cluster (jobid: 62, external: Submitted batch job 9175288, jobscript: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/tmp.0ii2dfj2/pca_plots.62). For error details see the cluster log and the log files of the involved rule(s).
+Trying to restart job 62.
+Select jobs to execute...
+
+[Tue Aug 11 16:49:31 2026]
+rule pca_plots:
+    input: featurecounts/featurecounts.readcounts.tsv
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    jobid: 62
+    reason: Missing output files: plots/PCA_top_PCA_variance_bar.png, plots/PCA_top_PC1_vs_PC2.png; Input files updated by another job: featurecounts/featurecounts.readcounts.tsv
+    resources: mem_mb=2000, disk_mb=1000, tmpdir=<TBD>, cpus=1, time_min=60, maxtime=1:00:00
+
+Submitted job 62 with external jobid 'Submitted batch job 9175289'.
+[Tue Aug 11 16:50:01 2026]
+Error in rule pca_plots:
+    jobid: 62
+    output: plots/PCA_top_PC1_vs_PC2.png, plots/PCA_top_PCA_variance_bar.png
+    conda-env: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/conda/6605ac50b3561ac8794c1ac9769ab35b_
+    shell:
+        
+        python scripts/pca_plotting.py         featurecounts/featurecounts.readcounts.tsv         plots
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 9175289
+
+Error executing rule pca_plots on cluster (jobid: 62, external: Submitted batch job 9175289, jobscript: /dartfs/rc/lab/H/HongJ/Petra/epimap/code/RNA/RNAseq-preprocessing/batch_260811/.snakemake/tmp.0ii2dfj2/pca_plots.62). For error details see the cluster log and the log files of the involved rule(s).
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2026-08-11T103047.256377.snakemake.log
+{'sample_csv': 'sample.csv', 'layout': 'paired', 'aligner_name': 'hisat', 'run_rsem': 'no', 'featurecounts_strand': '1', 'rsem_strandedness': 'foward', 'picard_strand': 'FIRST_READ_TRANSCRIPTION_STRAND', 'cutadapt_nextseq_flag': '', 'reference_fa': '/dartfs-hpc/rc/lab/G/GMBSR_bioinfo/genomic_references/reference_index_generation/Homo_sapiens.GRCh38.dna.primary_assembly.fa', 'annotation_gtf': '/dartfs-hpc/rc/lab/G/GMBSR_bioinfo/genomic_references/human/ensembl-annotations/Homo_sapiens.GRCh38.97.gtf', 'aligner_index': '/dartfs-hpc/rc/lab/G/GMBSR_bioinfo/genomic_references/human/HISAT2/Homo_sapiens.GRCh38.dna.primary_assembly', 'picard_refflat': '/dartfs-hpc/rc/lab/G/GMBSR_bioinfo/genomic_references/human/CollectRnaSeqMetrics/Homo_sapiens.GRCh38.97.refFlat.txt', 'picard_rrna_list': '/dartfs-hpc/rc/lab/G/GMBSR_bioinfo/genomic_references/human/CollectRnaSeqMetrics/Homo_sapiens.GRCh38.97.rRNA.interval_list', 'rsem_ref_path': '', 'picard_build_script': 'scripts/picard_ref_builder.sh', 'featurecounts_rscript': 'scripts/readcnt_to_rpkmtpm.py', 'featurecounts_annscript': 'scripts/add_gene_to_ensg.py', 'pca_plot_script': 'scripts/pca_plotting.py', 'cutadapt_path': 'cutadapt', 'fastqc_path': 'fastqc', 'samtools_path': 'samtools', 'aligner_path': 'hisat2', 'picard_path': 'picard', 'featurecounts_path': 'featureCounts', 'rsem_calc_exp_path': 'rsem-calculate-expression', 'rsem_prep_ref_path': 'rsem-prepare-reference', 'multiqc_path': 'multiqc'}

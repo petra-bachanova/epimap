@@ -44,3 +44,10 @@ data/
 
 # RNA analysis
 .snakemake
+alignment/
+featurecounts/
+markdup
+metrics
+slurm_logs
+trimming
+*.out
