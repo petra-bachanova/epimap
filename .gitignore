@@ -51,3 +51,5 @@ metrics
 slurm_logs
 trimming
 *.out
+.Rproj.user
+*.Rproj

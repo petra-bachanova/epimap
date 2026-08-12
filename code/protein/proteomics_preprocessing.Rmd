@@ -1,0 +1,91 @@
+---
+title: "proteomics_preprocessing"
+output: html_document
+date: "2026-08-11"
+---
+
+## Data source & preprocessing notes
+
+Raw data: `pr_00086_hong_20250819_Proteins.xlsx`, TMTpro-labeled LC-MS/MS 
+(Orbitrap Fusion Lumos, MS3/SPS quantification), 12 FFPE epilepsy surgery
+samples (6 good / 6 poor outcome), all run in a single TMT multiplex.
+
+**Proteins are pre-filtered by the core to those detected in all 12
+samples** — no missing values by design.
+
+**Two abundance types are exported; we use "Abundance," not "IBAQ."**
+"Abundance" = raw TMT reporter-ion intensities, normalized by the core
+to total signal per channel — valid for comparing a given protein across
+samples/outcome groups. "IBAQ" = those same values further normalized by 
+protein molecular weight, intended for comparing *different* proteins to 
+each other within a sample.
+
+
+```{r}
+library(dplyr)
+library(DEqMS)
+```
+
+# Read in data & filter
+```{r}
+datapath <- "~/Documents/repos/epimap/data"
+raw <- readxl::read_excel(paste0(datapath, "/protein/pr_00086_hong_20250819_Proteins.xlsx"), 
+                          sheet = "protein abundances")
+meta = read.csv(paste0(datapath, "/clinical_metadata_260811.csv"))
+
+id_mapping <- meta$patient_id
+names(id_mapping) <- sub("^", "Abundance ", meta$proteomics_id)
+
+# rename column names
+idx <- match(names(id_mapping), colnames(raw))
+colnames(raw)[idx] <- id_mapping[!is.na(idx)]
+
+# filter out duplicates (pick one with more peptides)
+raw_filt <- raw %>%
+  filter(`Gene Symbol` != "" & !is.na(`Gene Symbol`)) %>%
+  group_by(`Gene Symbol`) %>%
+  slice_max(`Number of Unique Peptides`, n = 1, with_ties = FALSE) %>%
+  ungroup()
+
+print(paste0("Number of proteins after removing duplicates: ", nrow(raw_filt)))
+
+# filter out proteins mapped by fewer than 2 peptides
+raw_filt <- raw_filt %>% filter(`Number of Unique Peptides` >= 2)
+print(paste0("Number of proteins after removing those mapped by fewer than 2 peptides: ", nrow(raw_filt)))
+```
+
+
+# Normalise and transform
+```{r}
+raw_filt <- raw_filt %>%
+  select(`Gene Symbol`, contains("MTS"))
+
+# plot distribution: frequency vs sample intensities
+raw_melt <- raw_filt %>% tidyr::pivot_longer(-`Gene Symbol`, names_to = "sample", values_to = "value")
+hist(raw_melt$value, breaks = 100, 
+     xlab = "IBAQ intensity", ylab = "Frequency", main = "Freq vs IBAQ intensity (before log2)")
+
+# log2 transform
+raw_log2t <- log2(tibble::column_to_rownames(raw_filt, "Gene Symbol"))
+
+# plot distribution: frequency vs sample intensities
+raw_log2t_melt <- raw_log2t %>% melt()
+hist(raw_log2t_melt$value, breaks = 100, 
+     xlab = "IBAQ intensity", ylab = "Frequency", main = "Freq vs IBAQ intensity (after log2)")
+
+# median normalisation
+raw_log2t_norm <- equalMedianNormalization(raw_log2t)
+raw_log2t_norm_melt <- raw_log2t_norm %>% melt()
+hist(raw_log2t_norm_melt$value, breaks = 100, 
+     xlab = "IBAQ intensity", ylab = "Frequency", main = "Freq vs IBAQ intensity (after log2 & normalisation)")
+```
+
+Histograms look very similar pre and post median normalisation.
+
+```{r}
+processed <- tibble::rownames_to_column(raw_log2t_norm, "gene_name")
+processed %>% left_join(., raw[])
+
+write.csv(processed, "~/Documents/repos/epimap/data/protein/processed_protein_260811.csv", row.names = FALSE)
+```
+
